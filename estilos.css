@@ -22,9 +22,12 @@ body{
 img{
     width:100%; 
 }
+[class*='button']{
+    cursor:pointer;
+}
 .open-menu{
 
-    max-height: 280px !important;
+    max-height: 205px !important;
 
 
 }
@@ -67,9 +70,9 @@ HEADER BAR
 }
 .header__bar__top .btnmenu{
     
-    margin-top:8px;
-    width:35px;
-    height:25px;
+    margin-top:10px;
+    width:30px;
+    height:20px;
     background-color:transparent;
     border:0;
     background-image: url(img/menu-icon.png);
@@ -86,7 +89,7 @@ HEADER BAR
     overflow: hidden;
     transition:all .3s;
     max-height: 0;
-    background:rgb(42, 42, 42);
+    background:rgba(42, 42, 42, 0.678);
 }
 @media only screen and (min-width: 992px) {
     .header__bar__menu{
@@ -100,8 +103,11 @@ HEADER BAR
 .header__bar__menu ul a{
     display:inline-block;
     padding:25px;
-    color:white;
+    color:rgba(255, 255, 255, 0.801);
     text-decoration:none;
+}
+.header__bar__menu ul a:hover{
+    color:rgb(66, 166, 224) !important;
 }
 /*menu media querys*/
 @media only screen and (min-width: 992px) {
@@ -145,16 +151,19 @@ HEADER HERO
     padding:0 20px;
     display:flex;
     align-items: center;
+    flex-wrap:wrap; 
+    justify-content: center;
 }
 
 @media only screen and (min-width: 992px) {
     .header__hero{
         max-height: 900px;
         padding:0 60px;
+
     }
 }
 .header__hero__content{
-    margin-top:-30px;
+    margin-top:65px;
     text-align:center;
 }
 @media only screen and (min-width: 992px) {
@@ -209,9 +218,14 @@ HEADER HERO
     background-image:url(img/appstore.png);
 }
 .conocermas{
-    color:white;
+    border:1px solid rgba(255, 255, 255, 0.562) !important;
+    color:white !important;
     font-size:1.1em;
     background:rgba(7, 7, 7, 0.555) !important;
+}
+.conocermas a{
+    color:white !important;
+    text-decoration: none;
 }
 @media only screen and (min-width: 992px) {
     .header__hero__content .container-buttons{
@@ -235,8 +249,23 @@ HEADER HERO
     }
 } 
 .header__hero__aside{
-    display:none;
+    display:block;
+    width:100%;
 
+}
+.header__hero__aside .video-container{
+    margin:auto;
+    width:75%;
+    height:0;
+    padding-top:45%;
+    position:relative;
+}
+.header__hero__aside iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
 }
 @media only screen and (min-width: 992px) {
     .header__hero__aside{
@@ -289,7 +318,7 @@ SECTION CALL TO ACTION
     .call2action .container{
         position:relative;
         margin:auto;
-        width:40%;
+        width:60%;
         height:310px;
     }
 } 
@@ -305,6 +334,9 @@ SECTION CALL TO ACTION
         width:50%;
         height:100%;
         position:relative;
+    }
+    .call2action .img-container img{
+        max-width:370px;
     }
 } 
 .call2action .content-container{
@@ -331,6 +363,9 @@ SECTION CALL TO ACTION
     margin-bottom:20px;
     font-size:1.8em;
 }
+.call2action .content-container .phrase{
+    font-size:1.2rem;
+}
 .call2action .content-container .container-buttons{
     margin-top:20px;
     text-align:center;
@@ -342,8 +377,107 @@ SECTION CALL TO ACTION
     }
 } 
 .call2action .img-container img{
-    width:95%;
+    width:60%;
     position:absolute;
     bottom:0;
+    right:10px;
 
+}
+/*=============SECCION PLANES========================*/
+.plans{
+    overflow: hidden;
+    background:rgb(243, 243, 243);
+}
+.plans .container{
+    text-align:center;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main-title{
+    margin-top:60px;
+    font-size:2.2rem;
+}
+.plans .card-plan{
+    margin:0 10px 60px 10px;
+    display:inline-block;
+    background:rgb(255, 255, 255);
+    padding:40px;
+}
+.plans .card-plan .dummy-feature{
+    visibility: hidden;
+}
+.plans .card-plan .card-plan_title{
+    
+    text-align:center;
+    margin:0 0 30px 0;
+    font-size:1.4rem;
+    font-weight: normal;
+}
+.plans .card-plan .card-plan_price{
+    color:purple;
+    font-size:3rem;
+    margin-bottom:30px;
+}
+.plans .card-plan ul{
+    list-style:none;
+
+    justify-content: center;
+}
+.plans .card-plan ul li{
+    padding-left:20px;
+    display:inline-block;
+    margin-bottom:23px;
+    background-image: url(img/check.png);
+    background-size:15px 15px;
+    background-repeat: no-repeat;
+    background-position:left center;
+}
+.plans .card-plan .card-plan_btn{
+    cursor:pointer;
+    background:purple;
+    border-radius: 30px;
+    color:white;
+    padding:15px;
+    margin-top:5px;
+    
+}
+/*SOBRE NOSOTROS ====================*/
+.about{
+    padding-bottom:60px;
+    text-align:center;
+}           
+.card-member{
+    display:inline-block;
+    width:70%;
+    padding:10px;
+    margin-bottom:20px;
+
+}
+@media only screen and (min-width: 992px) {
+    .card-member{
+        display:inline-block;
+        width:20%;
+        padding:20px;
+        margin:0 10px;
+    }
+} 
+.card-member .photo{
+    width:50%;
+}
+.card-member .card-member_name{
+    color:rgb(54, 54, 54);
+    padding:12px;
+}
+.card-member .card-member_ocupation{
+    margin-bottom:15px;
+    color:rgb(75, 75, 75);
+}
+.card-member .card-member_description{
+    color:rgb(75, 75, 75);
+    text-align: justify;
+}
+.card-member .icon{
+    margin:20px 3px;
+    width:10%;
 }
